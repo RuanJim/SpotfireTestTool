@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <id>bd139842-6189-4a09-8cfe-d4fc02da73b3</id>
+  <name>SpotfireTestTool</name>
+  <version>1.0</version>
+  <assemblies>
+    <assembly>
+      <fullname>SpotfireTestTool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4d95002c27fab778</fullname>
+      <codebase>SpotfireTestTool.dll</codebase>
+      <compatibility>
+        <min-version>0.0.0.0</min-version>
+        <max-version>#.#.*.*</max-version>
+      </compatibility>
+    </assembly>
+  </assemblies>
+  <extensions>
+    <addIn fullTypeName="SpotfireTestTool.CustomAddIn, SpotfireTestTool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4d95002c27fab778" />
+  </extensions>
+</module>
