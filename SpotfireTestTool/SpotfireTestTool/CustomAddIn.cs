@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using Spotfire.Dxp.Application;
 using Spotfire.Dxp.Application.Extension;
 
-namespace SpotfireTestTool
+namespace Com.PerkinElmer.Service.SpotfireTestTool
 {
     /// <summary>
     /// </summary>
