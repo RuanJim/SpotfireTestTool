@@ -13,6 +13,7 @@
 
 #region
 
+using Com.PerkinElmer.Service.SpotfireTestTool.CustomTool;
 using Spotfire.Dxp.Application.Extension;
 
 #endregion
@@ -23,5 +24,13 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool
     /// </summary>
     public sealed class CustomAddIn : AddIn
     {
+        protected override void RegisterTools(ToolRegistrar registrar)
+        {
+            base.RegisterTools(registrar);
+
+            CustomMenuGroup menuGroup = new CustomMenuGroup("R(D)");
+
+            registrar.Register(new TestTool(), menuGroup);
+        }
     }
 }
