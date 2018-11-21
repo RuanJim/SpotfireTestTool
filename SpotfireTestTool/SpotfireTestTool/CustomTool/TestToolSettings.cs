@@ -27,48 +27,76 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
     [PersistenceVersion(1, 0)]
     public sealed class TestToolSettings : CustomNode
     {
-        private readonly UndoableProperty<string> CalculatedKind;
-        private readonly UndoableList<string> CategoryColumns;
-        private readonly UndoableList<string> DataColumns;
-        private readonly UndoableProperty<string> DataRange;
-        private readonly UndoableProperty<string> DataTable;
+        private readonly UndoableProperty<string> calculatedKind;
+        private readonly UndoableList<string> categoryColumns;
+        private readonly UndoableList<string> dataColumns;
+        private readonly UndoableProperty<string> dataRange;
+        private readonly UndoableProperty<string> dataTable;
+
+        public string CalculatedKind
+        {
+            get { return this.calculatedKind.Value; }
+            set { this.calculatedKind.Value = value; }
+        }
+
+        public string DataTable {
+            get { return this.dataTable.Value; }
+            set { this.dataTable.Value = value; }
+        }
+
+        public string DataRange {
+            get { return this.dataRange.Value; }
+            set { this.dataRange.Value = value; }
+        }
+
+        public string[] CategoryColumns
+        {
+            get { return this.categoryColumns.ToArray(); }
+            set { this.categoryColumns.Clear(); this.categoryColumns.AddRange(value); }
+        }
+
+        public string[] DataColumns
+        {
+            get { return this.dataColumns.ToArray(); }
+            set { this.dataColumns.Clear(); this.categoryColumns.AddRange(value); }
+        }
 
         public TestToolSettings()
         {
-            CreateProperty(PropertyNames.DataTable, out DataTable, string.Empty);
-            CreateProperty(PropertyNames.DataRange, out DataRange, string.Empty);
-            CreateProperty(PropertyNames.CalculateKind, out CalculatedKind, string.Empty);
-            CreateProperty(PropertyNames.CategoryColumns, out CategoryColumns);
-            CreateProperty(PropertyNames.DataColumns, out DataColumns);
+            CreateProperty(PropertyNames.DataTable, out dataTable, string.Empty);
+            CreateProperty(PropertyNames.DataRange, out dataRange, string.Empty);
+            CreateProperty(PropertyNames.CalculateKind, out calculatedKind, string.Empty);
+            CreateProperty(PropertyNames.CategoryColumns, out categoryColumns);
+            CreateProperty(PropertyNames.DataColumns, out dataColumns);
         }
 
         public TestToolSettings(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
-            DeserializeProperty(info, context, PropertyNames.DataTable, out DataTable);
-            DeserializeProperty(info, context, PropertyNames.DataRange, out DataRange);
-            DeserializeProperty(info, context, PropertyNames.CalculateKind, out CalculatedKind);
-            DeserializeProperty(info, context, PropertyNames.CategoryColumns, out CategoryColumns);
-            DeserializeProperty(info, context, PropertyNames.DataColumns, out DataColumns);
+            DeserializeProperty(info, context, PropertyNames.DataTable, out dataTable);
+            DeserializeProperty(info, context, PropertyNames.DataRange, out dataRange);
+            DeserializeProperty(info, context, PropertyNames.CalculateKind, out calculatedKind);
+            DeserializeProperty(info, context, PropertyNames.CategoryColumns, out categoryColumns);
+            DeserializeProperty(info, context, PropertyNames.DataColumns, out dataColumns);
         }
 
         protected override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             base.GetObjectData(info, context);
 
-            SerializeProperty(info, context, DataTable);
-            SerializeProperty(info, context, DataRange);
-            SerializeProperty(info, context, CalculatedKind);
-            SerializeProperty(info, context, CategoryColumns);
-            SerializeProperty(info, context, DataTable);
+            SerializeProperty(info, context, dataTable);
+            SerializeProperty(info, context, dataRange);
+            SerializeProperty(info, context, calculatedKind);
+            SerializeProperty(info, context, categoryColumns);
+            SerializeProperty(info, context, dataColumns);
         }
 
         public new class PropertyNames : CustomNode.PropertyNames
         {
-            public static readonly PropertyName DataTable = CreatePropertyName("DataTable");
-            public static readonly PropertyName DataRange = CreatePropertyName("DataRange");
-            public static readonly PropertyName CategoryColumns = CreatePropertyName("CategoryColumns");
-            public static readonly PropertyName DataColumns = CreatePropertyName("DataColumns");
+            public static readonly PropertyName DataTable = CreatePropertyName("dataTable");
+            public static readonly PropertyName DataRange = CreatePropertyName("dataRange");
+            public static readonly PropertyName CategoryColumns = CreatePropertyName("categoryColumns");
+            public static readonly PropertyName DataColumns = CreatePropertyName("dataColumns");
             public static readonly PropertyName CalculateKind = CreatePropertyName("CalculateKind");
         }
     }

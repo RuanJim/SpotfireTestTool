@@ -12,6 +12,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Collections.Generic;
+using System.Windows.Forms;
 using Spotfire.Dxp.Application;
 using Spotfire.Dxp.Application.Extension;
 
@@ -19,7 +20,7 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
 {
     public sealed class TestTool : CustomTool<Document>
     {
-        public TestTool() : base("R(D) Test")
+        public TestTool() : base("R Test")
         {
         }
 
@@ -28,9 +29,9 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
             return true;
         }
 
-        protected override IEnumerable<object> ExecuteAndPromptCore(Document context)
+        protected override void ExecuteCore(Document context)
         {
-            return base.ExecuteAndPromptCore(context);
+            base.ExecuteCore(context);
         }
     }
 }

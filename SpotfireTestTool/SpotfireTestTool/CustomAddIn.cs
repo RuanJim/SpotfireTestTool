@@ -28,7 +28,7 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool
         {
             base.RegisterTools(registrar);
 
-            CustomMenuGroup menuGroup = new CustomMenuGroup("R(D)");
+            CustomMenuGroup menuGroup = new CustomMenuGroup("R");
 
             registrar.Register(new TestTool(), menuGroup);
         }
