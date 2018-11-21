@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="CustomAddIn.cs" />
     <Compile Include="CustomTool\TestTool.cs" />
+    <Compile Include="CustomTool\TestToolSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
