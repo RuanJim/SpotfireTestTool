@@ -88,6 +88,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Controls\ChooseCalculateKind.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\ChooseCalculateKind.Designer.cs">
+      <DependentUpon>ChooseCalculateKind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\DialogSettings.cs" />
+    <Compile Include="Views\Controls\SelectCategoryColumns.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\SelectCategoryColumns.Designer.cs">
+      <DependentUpon>SelectCategoryColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\SelectDataColumns.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\SelectDataColumns.Designer.cs">
+      <DependentUpon>SelectDataColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\SelectDataRange.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\SelectDataRange.Designer.cs">
+      <DependentUpon>SelectDataRange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ToolSettingsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +125,18 @@
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\ChooseCalculateKind.resx">
+      <DependentUpon>ChooseCalculateKind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\SelectCategoryColumns.resx">
+      <DependentUpon>SelectCategoryColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\SelectDataColumns.resx">
+      <DependentUpon>SelectDataColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\SelectDataRange.resx">
+      <DependentUpon>SelectDataRange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ToolSettingsDialog.resx">
       <DependentUpon>ToolSettingsDialog.cs</DependentUpon>

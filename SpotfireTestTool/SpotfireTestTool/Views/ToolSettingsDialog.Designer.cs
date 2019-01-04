@@ -39,7 +39,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ToolSettingsDialog";
-            this.Text = "ToolSettingsDialog";
+            this.Text = " ";
             this.ResumeLayout(false);
 
         }
