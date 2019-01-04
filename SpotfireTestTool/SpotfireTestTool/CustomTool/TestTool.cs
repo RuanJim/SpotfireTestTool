@@ -11,26 +11,32 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Collections.Generic;
-using System.Windows.Forms;
+#region
+
 using Spotfire.Dxp.Application;
 using Spotfire.Dxp.Application.Extension;
 using Spotfire.Dxp.Framework.ApplicationModel;
 using Spotfire.Dxp.Framework.Services;
 
+#endregion
+
 namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
 {
     public sealed class TestTool : CustomTool<Document>
     {
+        private readonly TestToolSettings settings;
+
+
         public TestTool() : base("R Test")
         {
+            settings = new TestToolSettings();
         }
 
         protected override void ExecuteCore(Document document)
         {
             PromptService prompt = document.GetService<PromptService>();
 
-            prompt.Prompt(new TestToolSettings());
+            prompt.Prompt(settings);
         }
     }
 }
