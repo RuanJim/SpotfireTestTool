@@ -13,7 +13,9 @@
 
 #region
 
+using System.Windows.Forms;
 using Com.PerkinElmer.Service.SpotfireTestTool.CustomTool;
+using Com.PerkinElmer.Service.SpotfireTestTool.Views;
 using Spotfire.Dxp.Application.Extension;
 
 #endregion
@@ -31,6 +33,13 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool
             CustomMenuGroup menuGroup = new CustomMenuGroup("R");
 
             registrar.Register(new TestTool(), menuGroup);
+        }
+
+        protected override void RegisterViews(ViewRegistrar registrar)
+        {
+            base.RegisterViews(registrar);
+
+            registrar.Register(typeof(Form), typeof(TestToolSettings), typeof(ToolSettingsDialog));
         }
     }
 }

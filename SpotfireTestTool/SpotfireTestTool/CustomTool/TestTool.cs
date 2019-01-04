@@ -15,6 +15,8 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Spotfire.Dxp.Application;
 using Spotfire.Dxp.Application.Extension;
+using Spotfire.Dxp.Framework.ApplicationModel;
+using Spotfire.Dxp.Framework.Services;
 
 namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
 {
@@ -24,14 +26,11 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
         {
         }
 
-        protected override bool GetSupportsPromptingCore()
+        protected override void ExecuteCore(Document document)
         {
-            return true;
-        }
+            PromptService prompt = document.GetService<PromptService>();
 
-        protected override void ExecuteCore(Document context)
-        {
-            base.ExecuteCore(context);
+            prompt.Prompt(new TestToolSettings());
         }
     }
 }
