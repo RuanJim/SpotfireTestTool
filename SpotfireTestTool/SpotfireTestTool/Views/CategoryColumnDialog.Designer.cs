@@ -77,8 +77,10 @@
             // 
             // CategoryColumnDialog
             // 
+            this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(284, 242);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.groupBox1);
