@@ -106,6 +106,7 @@
     <Compile Include="Views\DataColumnsDialog.Designer.cs">
       <DependentUpon>DataColumnsDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ITestToolSettingsForm.cs" />
     <Compile Include="Views\ToolSettingsDialog.cs">
       <SubType>Form</SubType>
     </Compile>

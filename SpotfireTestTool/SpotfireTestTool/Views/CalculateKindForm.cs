@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Com.PerkinElmer.Service.SpotfireTestTool.CustomTool;
+using Spotfire.Dxp.Application;
+using Spotfire.Dxp.Framework.Services;
 
 namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
 {
-    public partial class CalculateKindForm : Form
+    public partial class CalculateKindForm : Form, ITestToolSettingsForm
     {
         public CalculateKindForm()
         {
             InitializeComponent();
         }
+
+        public Document Document => TestToolSettings.GetService<Document>();
+
+        public TestToolSettings TestToolSettings { get; set; }
     }
 }

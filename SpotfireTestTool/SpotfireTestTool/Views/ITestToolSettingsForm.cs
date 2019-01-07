@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ToolSettingsDialog.cs" company="PerkinElmer Inc.">
+// <copyright file="ITestToolSettingsForm.cs" company="PerkinElmer Inc.">
 //   Copyright (c) 2013 PerkinElmer Inc.,
 //     940 Winter Street, Waltham, MA 02451.
 //     All rights reserved.
@@ -11,29 +11,14 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-#region
-
-using System.Windows.Forms;
 using Com.PerkinElmer.Service.SpotfireTestTool.CustomTool;
 using Spotfire.Dxp.Application;
-using Spotfire.Dxp.Framework.Services;
-
-#endregion
 
 namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
 {
-    public partial class ToolSettingsDialog : Form, ITestToolSettingsForm
+    interface ITestToolSettingsForm
     {
-        public Document Document => TestToolSettings.GetService<Document>();
-
-        public ToolSettingsDialog(TestToolSettings settings)
-        {
-            InitializeComponent();
-
-            TestToolSettings = settings;
-        }
-
-
-        public TestToolSettings TestToolSettings { get; set; }
+        Document Document { get; }
+        TestToolSettings TestToolSettings { get; set; }
     }
 }
