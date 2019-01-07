@@ -34,7 +34,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dataTableComboBox = new System.Windows.Forms.ComboBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -97,7 +97,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox2);
+            this.groupBox3.Controls.Add(this.dataTableComboBox);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(5, 5);
             this.groupBox3.Name = "groupBox3";
@@ -106,13 +106,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Data table";
             // 
-            // comboBox2
+            // dataTableComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(7, 20);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(187, 21);
-            this.comboBox2.TabIndex = 0;
+            this.dataTableComboBox.FormattingEnabled = true;
+            this.dataTableComboBox.Location = new System.Drawing.Point(7, 20);
+            this.dataTableComboBox.Name = "dataTableComboBox";
+            this.dataTableComboBox.Size = new System.Drawing.Size(187, 21);
+            this.dataTableComboBox.TabIndex = 0;
             // 
             // cancelButton
             // 
@@ -151,6 +151,7 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Select Data Range";
+            this.Load += new System.EventHandler(this.ToolSettingsDialog_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -167,7 +168,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox dataTableComboBox;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button okButton;
     }

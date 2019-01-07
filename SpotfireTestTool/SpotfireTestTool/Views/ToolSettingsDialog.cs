@@ -13,6 +13,7 @@
 
 #region
 
+using System.Linq;
 using System.Windows.Forms;
 using Com.PerkinElmer.Service.SpotfireTestTool.CustomTool;
 using Spotfire.Dxp.Application;
@@ -24,8 +25,6 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
 {
     public partial class ToolSettingsDialog : Form, ITestToolSettingsForm
     {
-        public Document Document => TestToolSettings.GetService<Document>();
-
         public ToolSettingsDialog(TestToolSettings settings)
         {
             InitializeComponent();
@@ -35,5 +34,13 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
 
 
         public TestToolSettings TestToolSettings { get; set; }
+
+        private void ToolSettingsDialog_Load(object sender, System.EventArgs e)
+        {
+            string[] tableList = TestToolSettings.Document.Data.Tables.AsEnumerable().Select(t => t.Name).ToArray();
+
+            this.dataTableComboBox.DataSource = tableList;
+
+        }
     }
 }

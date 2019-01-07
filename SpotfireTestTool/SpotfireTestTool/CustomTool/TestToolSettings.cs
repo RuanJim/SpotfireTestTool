@@ -15,6 +15,7 @@
 
 using System;
 using System.Runtime.Serialization;
+using Spotfire.Dxp.Application;
 using Spotfire.Dxp.Application.Extension;
 using Spotfire.Dxp.Framework.DocumentModel;
 using Spotfire.Dxp.Framework.Persistence;
@@ -32,6 +33,9 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
         private readonly UndoableList<string> dataColumns;
         private readonly UndoableProperty<string> dataRange;
         private readonly UndoableProperty<string> dataTable;
+        private readonly UndoableProperty<string> marking;
+
+        internal Document Document { get; set; }
 
         public string CalculatedKind
         {
@@ -47,6 +51,11 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
         public string DataRange {
             get { return this.dataRange.Value; }
             set { this.dataRange.Value = value; }
+        }
+
+        public string Marking {
+            get { return this.marking.Value; }
+            set { this.marking.Value = value; }
         }
 
         public string[] CategoryColumns
@@ -66,6 +75,7 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
             CreateProperty(PropertyNames.DataTable, out dataTable, string.Empty);
             CreateProperty(PropertyNames.DataRange, out dataRange, string.Empty);
             CreateProperty(PropertyNames.CalculateKind, out calculatedKind, string.Empty);
+            CreateProperty(PropertyNames.Marking, out marking, string.Empty);
             CreateProperty(PropertyNames.CategoryColumns, out categoryColumns);
             CreateProperty(PropertyNames.DataColumns, out dataColumns);
         }
@@ -76,6 +86,7 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
             DeserializeProperty(info, context, PropertyNames.DataTable, out dataTable);
             DeserializeProperty(info, context, PropertyNames.DataRange, out dataRange);
             DeserializeProperty(info, context, PropertyNames.CalculateKind, out calculatedKind);
+            DeserializeProperty(info, context, PropertyNames.Marking, out marking);
             DeserializeProperty(info, context, PropertyNames.CategoryColumns, out categoryColumns);
             DeserializeProperty(info, context, PropertyNames.DataColumns, out dataColumns);
         }
@@ -87,6 +98,7 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
             SerializeProperty(info, context, dataTable);
             SerializeProperty(info, context, dataRange);
             SerializeProperty(info, context, calculatedKind);
+            SerializeProperty(info, context, marking);
             SerializeProperty(info, context, categoryColumns);
             SerializeProperty(info, context, dataColumns);
         }
@@ -95,6 +107,7 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
         {
             public static readonly PropertyName DataTable = CreatePropertyName("dataTable");
             public static readonly PropertyName DataRange = CreatePropertyName("dataRange");
+            public static readonly PropertyName Marking = CreatePropertyName("Marking");
             public static readonly PropertyName CategoryColumns = CreatePropertyName("categoryColumns");
             public static readonly PropertyName DataColumns = CreatePropertyName("dataColumns");
             public static readonly PropertyName CalculateKind = CreatePropertyName("CalculateKind");

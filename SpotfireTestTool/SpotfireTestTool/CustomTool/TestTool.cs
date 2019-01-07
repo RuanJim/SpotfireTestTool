@@ -36,6 +36,8 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
         {
             PromptService prompt = document.GetService<PromptService>();
 
+            settings.Document = document;
+
             prompt.Prompt(settings);
         }
     }

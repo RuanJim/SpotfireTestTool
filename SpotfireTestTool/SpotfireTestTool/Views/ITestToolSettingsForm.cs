@@ -18,7 +18,6 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
 {
     interface ITestToolSettingsForm
     {
-        Document Document { get; }
         TestToolSettings TestToolSettings { get; set; }
     }
 }
