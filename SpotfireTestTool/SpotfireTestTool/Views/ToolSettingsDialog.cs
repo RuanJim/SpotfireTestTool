@@ -16,6 +16,7 @@
 using System.Windows.Forms;
 using Com.PerkinElmer.Service.SpotfireTestTool.CustomTool;
 using Spotfire.Dxp.Application;
+using Spotfire.Dxp.Framework.Services;
 
 #endregion
 
@@ -23,14 +24,15 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
 {
     public partial class ToolSettingsDialog : Form
     {
+        private Document document;
+
         public ToolSettingsDialog(TestToolSettings settings)
         {
             InitializeComponent();
+
+            document = settings.GetService<Document>();
         }
 
-        public ToolSettingsDialog(Document document)
-        {
-            InitializeComponent();
-        }
+
     }
 }

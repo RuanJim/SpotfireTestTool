@@ -1,13 +1,13 @@
-﻿namespace Com.PerkinElmer.Service.SpotfireTestTool.Views.Controls
+﻿namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
 {
-    partial class SelectDataColumns
+    partial class CategoryColumnDialog
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -39,27 +39,32 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(3, 16);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(294, 281);
+            this.listBox1.Size = new System.Drawing.Size(268, 232);
             this.listBox1.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(5, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(300, 300);
+            this.groupBox1.Size = new System.Drawing.Size(274, 251);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Category Columns";
             // 
-            // SelectDataColumns
+            // CategoryColumnDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.groupBox1);
-            this.Name = "SelectDataColumns";
-            this.Size = new System.Drawing.Size(300, 300);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "CategoryColumnDialog";
+            this.Padding = new System.Windows.Forms.Padding(5);
+            this.Text = "Category Columns";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 

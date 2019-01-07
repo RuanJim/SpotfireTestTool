@@ -88,30 +88,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Controls\ChooseCalculateKind.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Views\CalculateKindForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Controls\ChooseCalculateKind.Designer.cs">
-      <DependentUpon>ChooseCalculateKind.cs</DependentUpon>
+    <Compile Include="Views\CalculateKindForm.Designer.cs">
+      <DependentUpon>CalculateKindForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Controls\DialogSettings.cs" />
-    <Compile Include="Views\Controls\SelectCategoryColumns.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Views\CategoryColumnDialog.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Controls\SelectCategoryColumns.Designer.cs">
-      <DependentUpon>SelectCategoryColumns.cs</DependentUpon>
+    <Compile Include="Views\CategoryColumnDialog.Designer.cs">
+      <DependentUpon>CategoryColumnDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Controls\SelectDataColumns.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Views\DataColumnsDialog.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Controls\SelectDataColumns.Designer.cs">
-      <DependentUpon>SelectDataColumns.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Controls\SelectDataRange.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Controls\SelectDataRange.Designer.cs">
-      <DependentUpon>SelectDataRange.cs</DependentUpon>
+    <Compile Include="Views\DataColumnsDialog.Designer.cs">
+      <DependentUpon>DataColumnsDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ToolSettingsDialog.cs">
       <SubType>Form</SubType>
@@ -126,17 +119,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Controls\ChooseCalculateKind.resx">
-      <DependentUpon>ChooseCalculateKind.cs</DependentUpon>
+    <EmbeddedResource Include="Views\CalculateKindForm.resx">
+      <DependentUpon>CalculateKindForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Controls\SelectCategoryColumns.resx">
-      <DependentUpon>SelectCategoryColumns.cs</DependentUpon>
+    <EmbeddedResource Include="Views\CategoryColumnDialog.resx">
+      <DependentUpon>CategoryColumnDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Controls\SelectDataColumns.resx">
-      <DependentUpon>SelectDataColumns.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Controls\SelectDataRange.resx">
-      <DependentUpon>SelectDataRange.cs</DependentUpon>
+    <EmbeddedResource Include="Views\DataColumnsDialog.resx">
+      <DependentUpon>DataColumnsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ToolSettingsDialog.resx">
       <DependentUpon>ToolSettingsDialog.cs</DependentUpon>
