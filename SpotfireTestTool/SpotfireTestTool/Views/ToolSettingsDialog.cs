@@ -24,7 +24,7 @@ using Spotfire.Dxp.Framework.Services;
 namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
 {
     public partial class ToolSettingsDialog : Form, ITestToolSettingsForm
-    {
+    { 
         public ToolSettingsDialog(TestToolSettings settings)
         {
             InitializeComponent();
@@ -39,8 +39,38 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
         {
             string[] tableList = TestToolSettings.Document.Data.Tables.AsEnumerable().Select(t => t.Name).ToArray();
 
-            this.dataTableComboBox.DataSource = tableList;
+            dataTableComboBox.DataSource = tableList;
+        }
 
+        private void okButton_Click(object sender, System.EventArgs e)
+        {
+            TestToolSettings.DataTable = dataTableComboBox.Text;
+            TestToolSettings.Marking = markingComboBox.Text;
+            TestToolSettings.DataRange = markingRadio.Checked ? "marking" : "all";
+
+            Hide();
+
+            CategoryColumnDialog categoryColumnsDialog = new CategoryColumnDialog();
+            categoryColumnsDialog.TestToolSettings = TestToolSettings;
+
+            categoryColumnsDialog.ShowDialog();
+        }
+
+        private void markingRadio_CheckedChanged(object sender, System.EventArgs e)
+        {
+            markingComboBox.Enabled = markingRadio.Checked;
+
+            if (markingComboBox.Enabled)
+            {
+                string[] markingList =
+                    TestToolSettings.Document.Data.Markings.AsEnumerable().Select(m => m.Name).ToArray();
+
+                markingComboBox.DataSource = markingList;
+            }
+            else
+            {
+                markingComboBox.DataSource = null;
+            }
         }
     }
 }

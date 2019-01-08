@@ -67,7 +67,7 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
         public string[] DataColumns
         {
             get { return this.dataColumns.ToArray(); }
-            set { this.dataColumns.Clear(); this.categoryColumns.AddRange(value); }
+            set { this.dataColumns.Clear(); this.dataColumns.AddRange(value); }
         }
 
         public TestToolSettings()

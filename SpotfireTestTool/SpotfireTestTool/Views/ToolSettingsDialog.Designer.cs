@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.markingComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.markingRadio = new System.Windows.Forms.RadioButton();
+            this.allRecordRadio = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataTableComboBox = new System.Windows.Forms.ComboBox();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.markingComboBox);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(5, 125);
             this.groupBox1.Name = "groupBox1";
@@ -53,18 +53,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Marking";
             // 
-            // comboBox1
+            // markingComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(7, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 21);
-            this.comboBox1.TabIndex = 0;
+            this.markingComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.markingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.markingComboBox.Enabled = false;
+            this.markingComboBox.FormattingEnabled = true;
+            this.markingComboBox.Location = new System.Drawing.Point(3, 16);
+            this.markingComboBox.Name = "markingComboBox";
+            this.markingComboBox.Size = new System.Drawing.Size(310, 21);
+            this.markingComboBox.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.markingRadio);
+            this.groupBox2.Controls.Add(this.allRecordRadio);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(5, 56);
             this.groupBox2.Name = "groupBox2";
@@ -73,27 +76,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data Range";
             // 
-            // radioButton2
+            // markingRadio
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 43);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(98, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "marked records";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.markingRadio.AutoSize = true;
+            this.markingRadio.Location = new System.Drawing.Point(6, 43);
+            this.markingRadio.Name = "markingRadio";
+            this.markingRadio.Size = new System.Drawing.Size(98, 17);
+            this.markingRadio.TabIndex = 1;
+            this.markingRadio.Text = "marked records";
+            this.markingRadio.UseVisualStyleBackColor = true;
+            this.markingRadio.CheckedChanged += new System.EventHandler(this.markingRadio_CheckedChanged);
             // 
-            // radioButton1
+            // allRecordRadio
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(73, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "all records";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.allRecordRadio.AutoSize = true;
+            this.allRecordRadio.Checked = true;
+            this.allRecordRadio.Location = new System.Drawing.Point(7, 20);
+            this.allRecordRadio.Name = "allRecordRadio";
+            this.allRecordRadio.Size = new System.Drawing.Size(73, 17);
+            this.allRecordRadio.TabIndex = 0;
+            this.allRecordRadio.TabStop = true;
+            this.allRecordRadio.Text = "all records";
+            this.allRecordRadio.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -108,10 +112,12 @@
             // 
             // dataTableComboBox
             // 
+            this.dataTableComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataTableComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dataTableComboBox.FormattingEnabled = true;
-            this.dataTableComboBox.Location = new System.Drawing.Point(7, 20);
+            this.dataTableComboBox.Location = new System.Drawing.Point(3, 16);
             this.dataTableComboBox.Name = "dataTableComboBox";
-            this.dataTableComboBox.Size = new System.Drawing.Size(187, 21);
+            this.dataTableComboBox.Size = new System.Drawing.Size(310, 21);
             this.dataTableComboBox.TabIndex = 0;
             // 
             // cancelButton
@@ -126,13 +132,13 @@
             // 
             // okButton
             // 
-            this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.okButton.Location = new System.Drawing.Point(246, 186);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 4;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // ToolSettingsDialog
             // 
@@ -165,10 +171,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox markingComboBox;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton markingRadio;
+        private System.Windows.Forms.RadioButton allRecordRadio;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox dataTableComboBox;
         private System.Windows.Forms.Button cancelButton;

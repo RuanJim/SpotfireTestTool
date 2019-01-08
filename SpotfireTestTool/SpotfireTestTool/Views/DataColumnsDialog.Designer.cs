@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dataColumnsListBox = new System.Windows.Forms.ListBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -37,7 +37,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.dataColumnsListBox);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(5, 5);
             this.groupBox1.Name = "groupBox1";
@@ -46,14 +46,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data Columns";
             // 
-            // listBox1
+            // dataColumnsListBox
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(3, 16);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(268, 181);
-            this.listBox1.TabIndex = 0;
+            this.dataColumnsListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataColumnsListBox.FormattingEnabled = true;
+            this.dataColumnsListBox.Location = new System.Drawing.Point(3, 16);
+            this.dataColumnsListBox.Name = "dataColumnsListBox";
+            this.dataColumnsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.dataColumnsListBox.Size = new System.Drawing.Size(268, 181);
+            this.dataColumnsListBox.TabIndex = 0;
             // 
             // cancelButton
             // 
@@ -74,6 +75,7 @@
             this.okButton.TabIndex = 4;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // DataColumnsDialog
             // 
@@ -91,6 +93,7 @@
             this.Name = "DataColumnsDialog";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Text = "Data Columns";
+            this.Load += new System.EventHandler(this.DataColumnsDialog_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -99,7 +102,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox dataColumnsListBox;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button okButton;
     }

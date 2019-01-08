@@ -37,6 +37,7 @@
             // 
             // calculateKindComboBox
             // 
+            this.calculateKindComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.calculateKindComboBox.FormattingEnabled = true;
             this.calculateKindComboBox.Items.AddRange(new object[] {
             "Parametric",
@@ -45,7 +46,6 @@
             this.calculateKindComboBox.Name = "calculateKindComboBox";
             this.calculateKindComboBox.Size = new System.Drawing.Size(283, 21);
             this.calculateKindComboBox.TabIndex = 0;
-            this.calculateKindComboBox.Text = "Parametric";
             // 
             // groupBox1
             // 
@@ -67,6 +67,7 @@
             this.okButton.TabIndex = 2;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // cancelButton
             // 
@@ -94,6 +95,7 @@
             this.Name = "CalculateKindForm";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Text = "Calculate Kind";
+            this.Load += new System.EventHandler(this.CalculateKindForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
