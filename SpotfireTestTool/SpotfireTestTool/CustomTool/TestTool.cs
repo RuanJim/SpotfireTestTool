@@ -38,7 +38,13 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
 
             settings.Document = document;
 
-            prompt.Prompt(settings);
+            if (PromptResult.Ok == prompt.Prompt(settings))
+            {
+            }
+            else
+            {
+                
+            }
         }
     }
 }

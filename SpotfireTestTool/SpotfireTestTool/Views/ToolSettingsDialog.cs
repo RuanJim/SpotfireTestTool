@@ -53,7 +53,7 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
             CategoryColumnDialog categoryColumnsDialog = new CategoryColumnDialog();
             categoryColumnsDialog.TestToolSettings = TestToolSettings;
 
-            categoryColumnsDialog.ShowDialog();
+            DialogResult = categoryColumnsDialog.ShowDialog();
         }
 
         private void markingRadio_CheckedChanged(object sender, System.EventArgs e)

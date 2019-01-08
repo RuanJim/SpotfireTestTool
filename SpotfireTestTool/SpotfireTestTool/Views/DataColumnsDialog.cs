@@ -40,7 +40,7 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
 
             CalculateKindForm calculateKindDialog = new CalculateKindForm();
             calculateKindDialog.TestToolSettings = TestToolSettings;
-            calculateKindDialog.ShowDialog();
+            DialogResult = calculateKindDialog.ShowDialog();
         }
     }
 }

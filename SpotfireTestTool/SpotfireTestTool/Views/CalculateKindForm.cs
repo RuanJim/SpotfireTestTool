@@ -37,7 +37,6 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
         private void okButton_Click(object sender, System.EventArgs e)
         {
             this.TestToolSettings.CalculatedKind = calculateKindComboBox.Text;
-
         }
     }
 }

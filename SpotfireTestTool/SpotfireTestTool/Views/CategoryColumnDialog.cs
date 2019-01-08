@@ -52,7 +52,7 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
 
             DataColumnsDialog dataColumnsDialog = new DataColumnsDialog();
             dataColumnsDialog.TestToolSettings = TestToolSettings;
-            dataColumnsDialog.ShowDialog(this);
+            DialogResult = dataColumnsDialog.ShowDialog(this);
         }
     }
 }
