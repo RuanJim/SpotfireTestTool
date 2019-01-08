@@ -94,6 +94,7 @@
             this.MinimizeBox = false;
             this.Name = "CalculateKindForm";
             this.Padding = new System.Windows.Forms.Padding(5);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculate Kind";
             this.Load += new System.EventHandler(this.CalculateKindForm_Load);
             this.groupBox1.ResumeLayout(false);

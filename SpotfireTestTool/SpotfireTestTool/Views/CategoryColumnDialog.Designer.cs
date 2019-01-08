@@ -92,6 +92,7 @@
             this.MinimizeBox = false;
             this.Name = "CategoryColumnDialog";
             this.Padding = new System.Windows.Forms.Padding(5);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Category Columns";
             this.Load += new System.EventHandler(this.CategoryColumnDialog_Load);
             this.groupBox1.ResumeLayout(false);
