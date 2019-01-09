@@ -13,8 +13,12 @@
 
 #region
 
+using System.Text;
+using System.Windows.Forms;
+using Com.PerkinElmer.Service.SpotfireTestTool.Properties;
 using Spotfire.Dxp.Application;
 using Spotfire.Dxp.Application.Extension;
+using Spotfire.Dxp.Data.DataFunctions;
 using Spotfire.Dxp.Framework.ApplicationModel;
 using Spotfire.Dxp.Framework.Services;
 
@@ -26,8 +30,7 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
     {
         private readonly TestToolSettings settings;
 
-
-        public TestTool() : base("R Test")
+        public TestTool() : base("R Test") 
         {
             settings = new TestToolSettings();
         }
@@ -40,11 +43,23 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
 
             if (PromptResult.Ok == prompt.Prompt(settings))
             {
+                ExecuteDataFunction(settings);
             }
             else
             {
-                
+                MessageBox.Show("Tool execution canceled.");
             }
+        }
+
+        private void ExecuteDataFunction(TestToolSettings testToolSettings)
+        {
+            string script = Encoding.UTF8.GetString(Resources.scripts_bai);
+
+            DataFunctionDefinitionBuilder functionBuiler = new DataFunctionDefinitionBuilder("RTestTool", DataFunctionExecutorTypeIdentifiers.TERRScriptExecutor);
+
+            functionBuiler.Settings.Add("script", script);
+
+
         }
     }
 }

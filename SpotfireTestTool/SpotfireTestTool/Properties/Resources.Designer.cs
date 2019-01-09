@@ -59,5 +59,15 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] scripts_bai {
+            get {
+                object obj = ResourceManager.GetObject("scripts_bai", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
