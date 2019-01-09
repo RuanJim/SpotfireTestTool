@@ -13,6 +13,7 @@
 
 #region
 
+using System;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -60,16 +61,17 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
                 InputParameter categoryColumns, dataColumns, calculateKind;
                 OutputParameter returnMessage, resultAll;
 
+                bool includeFilter = string.Equals("filtered", settings.DataRange, StringComparison.OrdinalIgnoreCase);
 
                 DataFunction function = testToolSettings.Document.Data.DataFunctions.AddNew("RTest", GetFunctionDefinition(out categoryColumns, out dataColumns, out calculateKind, out returnMessage, out resultAll));
 
                 string categoryColumnsExp = string.Join(",",
                     settings.CategoryColumns.Select(c => $"[{settings.DataTable}].[{c}]").ToArray());
-                function.Inputs.SetInput(categoryColumns, categoryColumnsExp);
+                function.Inputs.SetInput(categoryColumns, categoryColumnsExp, includeFilter);
 
                 string dataColumnsExp = string.Join(",",
                     settings.DataColumns.Select(c => $"[{settings.DataTable}].[{c}]").ToArray());
-                function.Inputs.SetInput(dataColumns, dataColumnsExp);
+                function.Inputs.SetInput(dataColumns, dataColumnsExp, includeFilter);
 
                 function.Inputs.SetInput(calculateKind, $@"""{settings.CalculatedKind}""");
 
