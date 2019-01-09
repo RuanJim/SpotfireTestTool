@@ -45,8 +45,7 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
         private void okButton_Click(object sender, System.EventArgs e)
         {
             TestToolSettings.DataTable = dataTableComboBox.Text;
-            TestToolSettings.Marking = markingComboBox.Text;
-            TestToolSettings.DataRange = markingRadio.Checked ? "marking" : "all";
+            TestToolSettings.DataRange = filteredRadio.Checked ? "filtered" : "all";
 
             Hide();
 
@@ -54,23 +53,6 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.Views
             categoryColumnsDialog.TestToolSettings = TestToolSettings;
 
             DialogResult = categoryColumnsDialog.ShowDialog();
-        }
-
-        private void markingRadio_CheckedChanged(object sender, System.EventArgs e)
-        {
-            markingComboBox.Enabled = markingRadio.Checked;
-
-            if (markingComboBox.Enabled)
-            {
-                string[] markingList =
-                    TestToolSettings.Document.Data.Markings.AsEnumerable().Select(m => m.Name).ToArray();
-
-                markingComboBox.DataSource = markingList;
-            }
-            else
-            {
-                markingComboBox.DataSource = null;
-            }
         }
     }
 }

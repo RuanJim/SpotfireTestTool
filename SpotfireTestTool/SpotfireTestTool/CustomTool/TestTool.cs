@@ -58,7 +58,7 @@ namespace Com.PerkinElmer.Service.SpotfireTestTool.CustomTool
             DataFunctionDefinitionBuilder functionBuiler = new DataFunctionDefinitionBuilder("RTestTool", DataFunctionExecutorTypeIdentifiers.TERRScriptExecutor);
 
             functionBuiler.Settings.Add("script", script);
-
+            
 
         }
     }
